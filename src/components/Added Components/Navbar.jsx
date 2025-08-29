@@ -1,4 +1,15 @@
-export const Navbar = () => {
+import { useEffect } from 'react';
+
+export const Navbar = ({ menuOpen, setMenuOpen }) => {
+    useEffect(() => {
+        document.body.style.overflow = menuOpen ? "hidden" : "";
+    }, [menuOpen]);
+
+    const handleMenuToggle = () => {
+        console.log('Hamburger clicked, current menuOpen:', menuOpen);
+        setMenuOpen(!menuOpen);
+    };
+ 
     return <nav className="fixed top-0 w-full z-40 bg-[rgba(10, 10, 10, 0.8)] backdrop-blur-lg shadow-lg">
         <div className="max-w-5xl mx-auto px-4">
             <div className="flex justify-between items-center h-16">
@@ -15,28 +26,35 @@ export const Navbar = () => {
                     <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 group-hover:w-full transition-all duration-300"></div>
                 </a>
 
-                <div className="w-7 h-5 relative cursor-pointer z-40 md:hidden">
-                    &#9776;
+                <div className="md:hidden">
+                    <button 
+                        className="flex flex-col justify-center items-center w-8 h-8 cursor-pointer"
+                        onClick={handleMenuToggle}
+                        aria-label="Toggle menu"
+                    >
+                        <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-1' : ''}`}></span>
+                        <span className={`w-6 h-0.5 bg-white transition-all duration-300 mt-1 ${menuOpen ? 'opacity-0' : ''}`}></span>
+                        <span className={`w-6 h-0.5 bg-white transition-all duration-300 mt-1 ${menuOpen ? '-rotate-45 -translate-y-1' : ''}`}></span>
+                    </button>
                 </div>
                 <div className="hidden md:flex items-center gap-8">
-                    <a href="Home"
-                    className="tex-gray-300 hov:text-white transition-colors">
-                        {""}Home{""}
+                    <a href="#home"
+                    className="text-gray-300 hover:text-white transition-colors">
+                        Home
                     </a>
 
-                    <a href="About"
-                    className="tex-gray-300 hov:text-white transition-colors">
-                        {""}About{""}
+                    <a href="#about"
+                    className="text-gray-300 hover:text-white transition-colors">
+                        About
                     </a>
-                    <a href="Projects"
-                    className="tex-gray-300 hov:text-white transition-colors">
-                        {""}Projects{""}
+                    <a href="#projects"
+                    className="text-gray-300 hover:text-white transition-colors">
+                        Projects
                     </a>
-                    <a href="Contacts"
-                    className="tex-gray-300 hov:text-white transition-colors">
-                        {""}Contacts{""}
+                    <a href="#contacts"
+                    className="text-gray-300 hover:text-white transition-colors">
+                        Contacts
                     </a>
-
                 </div>
             </div>
         </div>
