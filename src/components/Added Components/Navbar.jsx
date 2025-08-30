@@ -13,7 +13,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
     return <nav className="fixed top-0 w-full z-40 bg-[rgba(10, 10, 10, 0.8)] backdrop-blur-lg shadow-lg">
         <div className="max-w-5xl mx-auto px-4">
             <div className="flex justify-between items-center h-16">
-                <a href="#home" className="group relative">
+                <a href="#Home" className="group relative">
                     <span className="font-mono text-xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent hover:from-blue-300 hover:via-purple-400 hover:to-cyan-300 transition-all duration-300">
                         &lt;OnlyD
                     </span>
@@ -38,20 +38,20 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
                     </button>
                 </div>
                 <div className="hidden md:flex items-center gap-8">
-                    <a href="#home"
+                    <a href="#Home"
                     className="text-gray-300 hover:text-white transition-colors">
                         Home
                     </a>
 
-                    <a href="#about"
+                    <a href="#About"
                     className="text-gray-300 hover:text-white transition-colors">
                         About
                     </a>
-                    <a href="#projects"
+                    <a href="#Projects"
                     className="text-gray-300 hover:text-white transition-colors">
                         Projects
                     </a>
-                    <a href="#contacts"
+                    <a href="#Contacts"
                     className="text-gray-300 hover:text-white transition-colors">
                         Contacts
                     </a>
