@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export const LoadingScreen = ({ onComplete }) => {
   const [text, setText] = useState("");
-  const fullText = "<Hello World />";
+  const fullText = "<404 Greeting Not Found>";
   const [show, setShow] = useState(true);
 
   useEffect(() => {
