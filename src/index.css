@@ -8,8 +8,19 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
-  background: #0a0a0a;
-  color: #f3f4f6;
+  background: #f0f9ff; /* sky-50 */
+  color: #111827;
+}
+
+/* Better selection color */
+::selection {
+  background-color: rgba(10, 186, 181, 0.25);
+  color: #111827;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
 }
 
 @layer utilities {
@@ -26,6 +37,11 @@ body {
     animation: loading 0.8s ease infinite;
   }
 
+  /* Blink cursor utility used by LoadingScreen */
+  .animate-blink {
+    animation: blink 1s steps(2, start) infinite;
+  }
+
   /* Hide scrollbar for horizontal scroll */
   .scrollbar-hide {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -33,5 +49,18 @@ body {
   }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
+  }
+
+  /* Subtle custom scrollbar (fallback when visible) */
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(10,186,181,0.55);
+    border-radius: 8px;
   }
 }

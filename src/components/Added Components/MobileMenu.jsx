@@ -6,18 +6,18 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     if (!menuOpen) return null;
     
     return (
-        <div className="fixed top-0 left-0 w-full h-full bg-black z-[9999] flex flex-col items-center justify-center">
+        <div className="fixed top-0 left-0 w-full h-full bg-sky-50 z-[9999] flex flex-col items-center justify-center">
             <div className="flex flex-col items-center gap-6">
-                <a href="#Home" className="text-2xl font-medium text-white hover:text-gray-300 transition-colors" onClick={() => setMenuOpen(false)}>
+                <a href="#Home" className="text-2xl font-medium text-gray-900 hover:text-black transition-colors" onClick={() => setMenuOpen(false)}>
                     Home
                 </a>
-                <a href="#About" className="text-2xl font-medium text-white hover:text-gray-300 transition-colors" onClick={() => setMenuOpen(false)}>
+                <a href="#About" className="text-2xl font-medium text-gray-900 hover:text-black transition-colors" onClick={() => setMenuOpen(false)}>
                     About
                 </a>
-                <a href="#Projects" className="text-2xl font-medium text-white hover:text-gray-300 transition-colors" onClick={() => setMenuOpen(false)}>
+                <a href="#Projects" className="text-2xl font-medium text-gray-900 hover:text-black transition-colors" onClick={() => setMenuOpen(false)}>
                     Projects
                 </a>
-                <a href="#Contacts" className="text-2xl font-medium text-white hover:text-gray-300 transition-colors" onClick={() => setMenuOpen(false)}>
+                <a href="#Contacts" className="text-2xl font-medium text-gray-900 hover:text-black transition-colors" onClick={() => setMenuOpen(false)}>
                     Contacts
                 </a>
             </div>
